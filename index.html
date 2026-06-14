@@ -37,85 +37,94 @@
             
             <div class="input-group-wrapper">
                 <!-- 基本設定 -->
-                <div class="input-category">
-                    <h3>基本設定</h3>
-                    <div class="form-group">
-                        <label for="current-age">現在の年齢 <span class="unit">(歳)</span></label>
-                        <div class="input-with-slider">
-                            <input type="number" id="current-age" min="50" max="75" value="60">
-                            <input type="range" id="current-age-slider" min="50" max="75" value="60">
+                <div class="input-category accordion-item">
+                    <button type="button" class="accordion-trigger" aria-expanded="false" data-target="basic-settings">
+                        <h3>基本設定</h3>
+                        <span class="accordion-icon">▼</span>
+                    </button>
+                    <div id="basic-settings" class="accordion-content">
+                        <div class="form-group">
+                            <label for="current-age">現在の年齢 <span class="unit">(歳)</span></label>
+                            <div class="input-with-slider">
+                                <input type="number" id="current-age" min="50" max="75" value="60">
+                                <input type="range" id="current-age-slider" min="50" max="75" value="60">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="life-expectancy">想定寿命 <span class="unit">(歳)</span></label>
-                        <div class="input-with-slider">
-                            <input type="number" id="life-expectancy" min="70" max="100" value="85">
-                            <input type="range" id="life-expectancy-slider" min="70" max="100" value="85">
+                        <div class="form-group">
+                            <label for="life-expectancy">想定寿命 <span class="unit">(歳)</span></label>
+                            <div class="input-with-slider">
+                                <input type="number" id="life-expectancy" min="70" max="100" value="85">
+                                <input type="range" id="life-expectancy-slider" min="70" max="100" value="85">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="region-select">お住まいの地域（住民税・国保料率等）</label>
-                        <select id="region-select">
-                            <option value="standard">標準（全国平均モデル）</option>
-                            <option value="tokyo">東京都23区（新宿区等）</option>
-                            <option value="osaka">大阪府大阪市</option>
-                            <option value="nagoya">愛知県名古屋市</option>
-                            <option value="fukuoka">福岡県福岡市</option>
-                            <option value="sapporo">北海道札幌市</option>
-                        </select>
-                    </div>
-                    <div class="form-group-row">
-                        <div class="form-group half">
-                            <label for="household-type">世帯区分</label>
-                            <select id="household-type">
-                                <option value="single">単身世帯</option>
-                                <option value="couple">夫婦（配偶者あり・扶養内）</option>
+                        <div class="form-group">
+                            <label for="region-select">お住まいの地域（住民税・国保料率等）</label>
+                            <select id="region-select">
+                                <option value="standard">標準（全国平均モデル）</option>
+                                <option value="tokyo">東京都23区（新宿区等）</option>
+                                <option value="osaka">大阪府大阪市</option>
+                                <option value="nagoya">愛知県名古屋市</option>
+                                <option value="fukuoka">福岡県福岡市</option>
+                                <option value="sapporo">北海道札幌市</option>
                             </select>
                         </div>
-                        <div class="form-group half">
-                            <label for="health-insurance-type">退職直後の健康保険</label>
-                            <select id="health-insurance-type">
-                                <option value="kokubo">国民健康保険</option>
-                                <option value="ninki">健康保険任意継続 (2年間)</option>
-                            </select>
+                        <div class="form-group-row">
+                            <div class="form-group half">
+                                <label for="household-type">世帯区分</label>
+                                <select id="household-type">
+                                    <option value="single">単身世帯</option>
+                                    <option value="couple">夫婦（配偶者あり・扶養内）</option>
+                                </select>
+                            </div>
+                            <div class="form-group half">
+                                <label for="health-insurance-type">退職直後の健康保険</label>
+                                <select id="health-insurance-type">
+                                    <option value="kokubo">国民健康保険</option>
+                                    <option value="ninki">健康保険任意継続 (2年間)</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- 収入・年金設定 -->
-                <div class="input-category">
-                    <h3>収入・年金の設定</h3>
-                    
-                    <div class="form-group">
-                        <label for="pre-retirement-income">
-                            退職直前の前年年収 <span class="unit">(額面・万円)</span>
-                            <span class="tooltip-trigger" data-tooltip="退職直後の国民健康保険料や、初年度の住民税の計算に使用します。">ℹ️</span>
-                        </label>
-                        <div class="input-with-slider">
-                            <input type="number" id="pre-retirement-income" min="0" max="2000" step="50" value="600">
-                            <input type="range" id="pre-retirement-income-slider" min="0" max="2000" step="50" value="600">
+                <div class="input-category accordion-item">
+                    <button type="button" class="accordion-trigger" aria-expanded="false" data-target="income-settings">
+                        <h3>収入・年金の設定</h3>
+                        <span class="accordion-icon">▼</span>
+                    </button>
+                    <div id="income-settings" class="accordion-content">
+                        <div class="form-group">
+                            <label for="pre-retirement-income">
+                                退職直前の前年年収 <span class="unit">(額面・万円)</span>
+                                <span class="tooltip-trigger" data-tooltip="退職直後の国民健康保険料や、初年度の住民税の計算に使用します。">ℹ️</span>
+                            </label>
+                            <div class="input-with-slider">
+                                <input type="number" id="pre-retirement-income" min="0" max="2000" step="50" value="600">
+                                <input type="range" id="pre-retirement-income-slider" min="0" max="2000" step="50" value="600">
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="form-group-row">
-                        <div class="form-group half">
-                            <label for="basic-pension">65歳基準 基礎年金 <span class="unit">(年間・万円)</span></label>
-                            <input type="number" id="basic-pension" min="0" max="150" value="80">
+                        <div class="form-group-row">
+                            <div class="form-group half">
+                                <label for="basic-pension">65歳基準 基礎年金 <span class="unit">(年間・万円)</span></label>
+                                <input type="number" id="basic-pension" min="0" max="150" value="80">
+                            </div>
+                            <div class="form-group half">
+                                <label for="welfare-pension">65歳基準 厚生年金 <span class="unit">(年間・万円)</span></label>
+                                <input type="number" id="welfare-pension" min="0" max="400" value="120">
+                            </div>
                         </div>
-                        <div class="form-group half">
-                            <label for="welfare-pension">65歳基準 厚生年金 <span class="unit">(年間・万円)</span></label>
-                            <input type="number" id="welfare-pension" min="0" max="400" value="120">
-                        </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="post-retirement-work-income">
-                            受給開始後のその他年収 <span class="unit">(アルバイト等・額面・年間・万円)</span>
-                            <span class="tooltip-trigger" data-tooltip="年金受給中に並行して得る給与収入等。翌年の税金や保険料に影響します。">ℹ️</span>
-                        </label>
-                        <div class="input-with-slider">
-                            <input type="number" id="post-retirement-work-income" min="0" max="1000" step="10" value="0">
-                            <input type="range" id="post-retirement-work-income-slider" min="0" max="1000" step="10" value="0">
+                        <div class="form-group">
+                            <label for="post-retirement-work-income">
+                                受給開始後のその他年収 <span class="unit">(アルバイト等・額面・年間・万円)</span>
+                                <span class="tooltip-trigger" data-tooltip="年金受給中に並行して得る給与収入等。翌年の税金や保険料に影響します。">ℹ️</span>
+                            </label>
+                            <div class="input-with-slider">
+                                <input type="number" id="post-retirement-work-income" min="0" max="1000" step="10" value="0">
+                                <input type="range" id="post-retirement-work-income-slider" min="0" max="1000" step="10" value="0">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -189,30 +198,35 @@
 
     <!-- 下部：年次詳細テーブル -->
     <footer class="app-footer-table-section">
-        <section class="table-panel glass-card">
-            <h2 class="section-title"><span class="icon">📋</span> 年次シミュレーション詳細 (検討中: <span id="table-selected-age">65</span>歳開始時)</h2>
-            <div class="table-wrapper">
-                <table class="detail-table">
-                    <thead>
-                        <tr>
-                            <th>年齢</th>
-                            <th>前年収入(給与等)</th>
-                            <th>年金受取(額面)</th>
-                            <th>その他収入(受給中)</th>
-                            <th>所得税</th>
-                            <th>住民税</th>
-                            <th>社会保険料</th>
-                            <th>年間手取り</th>
-                            <th>手取り累計</th>
-                        </tr>
-                    </thead>
-                    <tbody id="detail-table-body">
-                        <!-- JSで動的に行を挿入します -->
-                    </tbody>
-                </table>
-            </div>
-            <div class="table-notes">
-                <p>※本シミュレーションは簡易的なものであり、実際の受給額や税金・社会保険料は、個人の加入状況、お住まいの自治体、実際の法改正によって異なります。目安としてご利用ください。</p>
+        <section class="table-panel glass-card accordion-item">
+            <button type="button" class="accordion-trigger table-trigger" aria-expanded="false" data-target="table-details">
+                <h2 class="section-title"><span class="icon">📋</span> 年次シミュレーション詳細 (検討中: <span id="table-selected-age">65</span>歳開始時)</h2>
+                <span class="accordion-icon">▼</span>
+            </button>
+            <div id="table-details" class="accordion-content">
+                <div class="table-wrapper">
+                    <table class="detail-table">
+                        <thead>
+                            <tr>
+                                <th>年齢</th>
+                                <th>前年収入(給与等)</th>
+                                <th>年金受取(額面)</th>
+                                <th>その他収入(受給中)</th>
+                                <th>所得税</th>
+                                <th>住民税</th>
+                                <th>社会保険料</th>
+                                <th>年間手取り</th>
+                                <th>手取り累計</th>
+                            </tr>
+                        </thead>
+                        <tbody id="detail-table-body">
+                            <!-- JSで動的に行を挿入します -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-notes">
+                    <p>※本シミュレーションは簡易的なものであり、実際の受給額や税金・社会保険料は、個人の加入状況、お住まいの自治体、実際の法改正によって異なります。目安としてご利用ください。</p>
+                </div>
             </div>
         </section>
     </footer>

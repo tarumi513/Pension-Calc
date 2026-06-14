@@ -75,8 +75,33 @@ const CONSTANTS = {
 document.addEventListener('DOMContentLoaded', () => {
     initElements();
     initEventListeners();
+    initAccordions();
     calculateAndRender();
 });
+
+// アコーディオンUIの制御
+function initAccordions() {
+    const triggers = document.querySelectorAll('.accordion-trigger');
+    
+    triggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const targetId = trigger.getAttribute('data-target');
+            const targetContent = document.getElementById(targetId);
+            
+            if (!targetContent) return;
+            
+            const isOpen = targetContent.classList.contains('open');
+            
+            if (isOpen) {
+                targetContent.classList.remove('open');
+                trigger.setAttribute('aria-expanded', 'false');
+            } else {
+                targetContent.classList.add('open');
+                trigger.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+}
 
 // UI要素の取得と同期
 let elements = {};
